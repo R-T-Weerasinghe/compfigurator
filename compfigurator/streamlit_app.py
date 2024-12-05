@@ -1,5 +1,6 @@
 import streamlit as st
 from main import ComputerConfigurator, UserPreferences
+import random 
 
 def add_message(role: str, content: str):
     """Add message to chat history"""
@@ -13,7 +14,7 @@ def init_session_state():
         st.session_state.messages = []
         tasks = list(st.session_state.configurator.task_requirements.keys())
         task_list = "\n".join([f"{i}. {task}" for i, task in enumerate(tasks, 1)])
-        welcome_msg = f"Welcome! Please enter your desired task from the following options:\n\n{task_list}\n\nOr press Enter for a general build."
+        welcome_msg = f"Welcome! Please enter your desired build from the following options:\n\n{task_list}\n\n"
         add_message("assistant", welcome_msg)
     if 'current_step' not in st.session_state:
         st.session_state.current_step = 'task'
@@ -37,7 +38,7 @@ def handle_task_input(prompt: str):
         if suggestion_list=="":
             tasks = list(st.session_state.configurator.task_requirements.keys())
             suggestion_list = "\n".join([f"{i}. {task}" for i, task in enumerate(tasks, 1)])
-        add_message("assistant", f"Invalid task. Did you mean one of these?\n{suggestion_list}")
+        add_message("assistant", f"Build not found. Did you mean one of these?\n{suggestion_list}")
 
 def handle_budget_input(prompt: str):
     """Handle budget input and generate configuration"""
@@ -58,14 +59,42 @@ def handle_budget_input(prompt: str):
             # Display best configuration
             best_config = configurator.format_configuration(configurator.best_config, include_explanations=True)
             add_message("assistant", f"Best Configuration:\n```\n{best_config}\n```")
+
+            add_message("assistant", "Would you like to see alternative configurations? (yes/no)")
+            st.session_state.current_step = 'alt'
             
             # Display alternatives
-            for i, alt in enumerate(configurator.alternative_configs[:3], 1):
-                alt_config = configurator.format_configuration(alt)
-                add_message("assistant", f"Alternative {i}:\n```\n{alt_config}\n```")
+            # alt = random.choice(configurator.alternative_configs[:5])
+            # add_message("assistant", f"Alternative Configuration:\n```\n{configurator.format_configuration(alt)}\n```")
+            # for i, alt in enumerate(configurator.alternative_configs[:3], 1):
+            #     alt_config = configurator.format_configuration(alt)
+            #     add_message("assistant", f"Alternative {i}:\n```\n{alt_config}\n```")
         else:
             add_message("assistant", "No valid configurations found for your requirements.")
-        
+            # Reset for next configuration
+            st.session_state.current_step = 'task'
+            st.session_state.task = None
+            st.session_state.budget = None
+            st.session_state.configurator.best_config = None
+            st.session_state.configurator.alternative_configs = []
+            # add_message("assistant", "Please enter your desired task from the following options:")
+            tasks = list(st.session_state.configurator.task_requirements.keys())
+            task_list = "\n".join([f"{i}. {task}" for i, task in enumerate(tasks, 1)])
+            continue_msg = f"Please enter your desired computing build from the following options:\n\n{task_list}\n\nOr press Enter for a general build."
+            add_message("assistant", continue_msg)
+    else:
+        add_message("assistant", "Invalid budget. Please enter a positive number.")
+
+def handle_alt_input(prompt: str):
+    configurator = st.session_state.configurator
+    if(prompt.lower() == "yes" or prompt.lower() == "y"):
+        alt = random.choice(configurator.alternative_configs[:10])
+        add_message("assistant", f"Alternative Configuration:\n```\n{configurator.format_configuration(alt, include_explanations=True)}\n```")
+        # prompt = st.session_state.user_input
+        # st.session_state.user_input = ""
+        add_message("assistant", "Would you like to see alternative configurations? (yes/no)")
+
+    else:
         # Reset for next configuration
         st.session_state.current_step = 'task'
         st.session_state.task = None
@@ -75,10 +104,8 @@ def handle_budget_input(prompt: str):
         # add_message("assistant", "Please enter your desired task from the following options:")
         tasks = list(st.session_state.configurator.task_requirements.keys())
         task_list = "\n".join([f"{i}. {task}" for i, task in enumerate(tasks, 1)])
-        continue_msg = f"Please enter your desired task from the following options:\n\n{task_list}\n\nOr press Enter for a general build."
+        continue_msg = f"Please enter your desired build from the following options:\n\n{task_list}\n\n"
         add_message("assistant", continue_msg)
-    else:
-        add_message("assistant", "Invalid budget. Please enter a positive number.")
 
 def on_message_submit():
     """Handle message submission"""
@@ -94,6 +121,8 @@ def on_message_submit():
             handle_task_input(prompt)
         elif st.session_state.current_step == 'budget':
             handle_budget_input(prompt)
+        elif st.session_state.current_step == 'alt':
+            handle_alt_input(prompt)
 
 
 def show_knowledge_base():
@@ -159,7 +188,7 @@ def main():
         st.session_state.budget = None
         tasks = list(st.session_state.configurator.task_requirements.keys())
         task_list = "\n".join([f"{i}. {task}" for i, task in enumerate(tasks, 1)])
-        welcome_msg = f"Welcome! Please enter your desired task from the following options:\n\n{task_list}\n\nOr press Enter for a general build."
+        welcome_msg = f"Welcome! Please enter your desired build from the following options:\n\n{task_list}\n\n"
         add_message("assistant", welcome_msg)
         st.rerun()
     

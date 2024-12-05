@@ -4,6 +4,7 @@ from experta import *
 from typing import List, Dict, Optional, Tuple
 import os
 import difflib
+import random
 
 
 class UserInputHandler:
@@ -154,7 +155,7 @@ class ComputerConfigurator(KnowledgeEngine):
 
     def get_closest_match(self, user_input, options):
         matches = difflib.get_close_matches(
-            user_input, options, n=1, cutoff=0.1)
+            user_input, options, n=1, cutoff=0.7)
         return matches[0] if matches else None
 
     @Rule(
@@ -644,19 +645,31 @@ class ComputerConfigurator(KnowledgeEngine):
                 #                 Most Likely Total: ${config['total_price_range'].most_likely:.2f}
                 #             """
 
-                return f"""Configuration Score: {config['score']:.4f}
+                return f"""Confidence Score: {config['score']:.4f}
 Total Price: ${config['total_price']:.2f}
+
 Components:
-- CPU: {config['components']['cpu']} (${cpu['price']:.2f}) because {cpu_explain}
-- Motherboard: {config['components']['motherboard']} (${mb['price']:.2f}) because {mb_explain}
-- GPU: {config['components']['gpu']} (${gpu['price']:.2f}) because {gpu_explain}
-- RAM: {config['components']['ram']} (${ram['price']:.2f}) because {ram_explain}
-- Storage: {config['components']['storage']} (${storage['price']:.2f}) because {storage_explain}
-- Monitor: {config['components']['monitor']} (${monitor['price']:.2f}) because {monitor_explain}
+- CPU: {config['components']['cpu']} (${cpu['price']:.2f}) 
+    because {cpu_explain}
+
+- Motherboard: {config['components']['motherboard']} (${mb['price']:.2f}) 
+    because {mb_explain}
+
+- GPU: {config['components']['gpu']} (${gpu['price']:.2f}) 
+    because {gpu_explain}
+
+- RAM: {config['components']['ram']} (${ram['price']:.2f}) 
+    because {ram_explain}
+
+- Storage: {config['components']['storage']} (${storage['price']:.2f}) 
+    because {storage_explain}
+    
+- Monitor: {config['components']['monitor']} (${monitor['price']:.2f}) 
+    because {monitor_explain}
 """
             else:
                 return f"""
-Configuration Score: {config['score']:.4f}
+Confidence Score: {config['score']:.4f}
 Total Price: ${config['total_price']:.2f}
 Components:
 - CPU: {config['components']['cpu']} (${cpu['price']:.2f})
@@ -697,23 +710,24 @@ Components:
         else:
             print("No configuration available for the given task and budget.")
 
-        print("\n=== ALTERNATIVE CONFIGURATIONS ===")
+        print("\n=== ALTERNATIVE CONFIGURATION ===")
         # Sort alternatives by score in descending order
 
         sorted_alts = sorted(self.alternative_configs,
                              key=lambda x: x['score'],
-                             reverse=True)[:3]  # Show top 3 alternatives
+                             reverse=True)[:5]  # Show top 5 alternatives
         if not sorted_alts:
             print("No alternative configurations available")
         else:
-            for i, alt in enumerate(sorted_alts, 1):
-                print(f"\nAlternative {i}:")
-                print(self.format_configuration(alt))
+            print(self.format_configuration(random.choice(sorted_alts)))
+            # for i, alt in enumerate(sorted_alts, 1):
+            #     print(f"\nAlternative {i}:")
+            #     print(self.format_configuration(alt))
 
             # Print "No configuration available" for missing alternatives
-            for i in range(len(sorted_alts) + 1, 4):
-                print(f"\nAlternative {i}:")
-                print("No configuration available")
+            # for i in range(len(sorted_alts) + 1, 4):
+            #     print(f"\nAlternative {i}:")
+            #     print("No configuration available")
 
 
 if __name__ == "__main__":
