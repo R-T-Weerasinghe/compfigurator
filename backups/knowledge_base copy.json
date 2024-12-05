@@ -1,0 +1,343 @@
+{
+    "taskRequirements": {
+        "scientific": {
+            "budgetAlloc": {
+                "cpu": 0.4,
+                "ram": 0.2,
+                "gpu": 0.15,
+                "ssd": 0.15,
+                "monitor": 0.05,
+                "mb": 0.05
+            }
+        },
+        "machineLearning": {
+            "budgetAlloc": {
+                "cpu": 0.2,
+                "ram": 0.5,
+                "gpu": 0.2,
+                "ssd": 0.05,
+                "monitor": 0.025,
+                "mb": 0.025
+            },
+            "processor": [
+                ["medium", 0.6],
+                ["high", 0.9],
+                ["very_high", 0.95]
+            ],
+            "ram": [
+                ["medium", 0.7],
+                ["high", 1]
+            ],
+            "vga": [
+                ["medium", 0.8],
+                ["high", 0.9]
+            ]
+        },
+        "graphicDesign": {
+            "budgetAlloc": {
+                "cpu": 0.2,
+                "ram": 0.15,
+                "gpu": 0.25,
+                "ssd": 0.1,
+                "monitor": 0.25,
+                "mb": 0.05
+            },
+            "processor": [
+                ["medium", 0.6],
+                ["high", 0.9],
+                ["very_high", 0.95]
+            ],
+            "ram": [
+                ["medium", 0.7],
+                ["high", 1]
+            ],
+            "vga": [
+                ["medium", 0.8],
+                ["high", 0.9]
+            ]
+        },
+        "engineering": {
+            "budgetAlloc": {
+                "cpu": 0.3,
+                "ram": 0.15,
+                "gpu": 0.3,
+                "ssd": 0.1,
+                "monitor": 0.1,
+                "mb": 0.05
+            },
+            "processor": [
+                ["medium", 0.6],
+                ["high", 0.9],
+                ["very_high", 0.95]
+            ],
+            "ram": [
+                ["medium", 0.7],
+                ["high", 1]
+            ],
+            "vga": [
+                ["medium", 0.8],
+                ["high", 0.9]
+            ]
+        },
+        "gaming": {
+            "budgetAlloc": {
+                "cpu": 0.2,
+                "ram": 0.1,
+                "gpu": 0.4,
+                "ssd": 0.1,
+                "monitor": 0.15,
+                "mb": 0.05
+            },
+            "processor": [
+                ["medium", 0.6],
+                ["high", 0.9],
+                ["very_high", 0.95]
+            ],
+            "ram": [
+                ["medium", 0.7],
+                ["high", 1]
+            ],
+            "vga": [
+                ["medium", 0.8],
+                ["high", 0.9]
+            ]
+        },
+        "office": {
+            "budgetAlloc": {
+                "cpu": 0.3,
+                "ram": 0.2,
+                "gpu": 0.1,
+                "ssd": 0.2,
+                "monitor": 0.15,
+                "mb": 0.05
+            },
+            "processor": [
+                ["medium", 0.6],
+                ["high", 0.9],
+                ["very_high", 0.95]
+            ],
+            "ram": [
+                ["medium", 0.7],
+                ["high", 1]
+            ],
+            "vga": [
+                ["medium", 0.8],
+                ["high", 0.9]
+            ]
+        },
+        "softwareDevelopment": {
+            "budgetAlloc": {
+                "cpu": 0.3,
+                "ram": 0.2,
+                "gpu": 0.1,
+                "ssd": 0.2,
+                "monitor": 0.15,
+                "mb": 0.05
+            },
+            "processor": [
+                ["medium", 0.6],
+                ["high", 0.9],
+                ["very_high", 0.95]
+            ],
+            "ram": [
+                ["medium", 0.7],
+                ["high", 1]
+            ],
+            "vga": [
+                ["medium", 0.8],
+                ["high", 0.9]
+            ]
+        },
+        "videoEditingAndAnimation": {
+            "budgetAlloc": {
+                "cpu": 0.25,
+                "ram": 0.2,
+                "gpu": 0.35,
+                "ssd": 0.1,
+                "monitor": 0.1,
+                "mb": 0.05
+            },
+            "processor": [
+                ["medium", 0.6],
+                ["high", 0.9],
+                ["very_high", 0.95]
+            ],
+            "ram": [
+                ["medium", 0.7],
+                ["high", 1]
+            ],
+            "vga": [
+                ["medium", 0.8],
+                ["high", 0.9]
+            ]
+        },
+        "contentCreation": {
+            "budgetAlloc": {
+                "cpu": 0.3,
+                "ram": 0.15,
+                "gpu": 0.2,
+                "ssd": 0.2,
+                "monitor": 0.1,
+                "mb": 0.05
+            },
+            "processor": [
+                ["medium", 0.6],
+                ["high", 0.9],
+                ["very_high", 0.95]
+            ],
+            "ram": [
+                ["medium", 0.7],
+                ["high", 1]
+            ],
+            "vga": [
+                ["medium", 0.8],
+                ["high", 0.9]
+            ]
+        },
+        "homeTheatre": {
+            "budgetAlloc": {
+                "cpu": 0.25,
+                "ram": 0.15,
+                "gpu": 0.2,
+                "ssd": 0.2,
+                "monitor": 0.15,
+                "mb": 0.05
+            },
+            "processor": [
+                ["medium", 0.6],
+                ["high", 0.9],
+                ["very_high", 0.95]
+            ],
+            "ram": [
+                ["medium", 0.7],
+                ["high", 1]
+            ],
+            "vga": [
+                ["medium", 0.8],
+                ["high", 0.9]
+            ]
+        },
+        "general": {
+            "budgetAlloc": {
+                "cpu": 0.25,
+                "ram": 0.2,
+                "gpu": 0.2,
+                "ssd": 0.15,
+                "monitor": 0.15,
+                "mb": 0.05
+            },
+            "processor": [
+                ["medium", 0.6],
+                ["high", 0.9],
+                ["very_high", 0.95]
+            ],
+            "ram": [
+                ["medium", 0.7],
+                ["high", 1]
+            ],
+            "vga": [
+                ["medium", 0.8],
+                ["high", 0.9]
+            ]
+        }
+    },
+    "components": {
+        "processor": [
+            {
+                "name": "i5_6core",
+                "socket": "LGA1200",
+                "power": "medium",
+                "cost": 200,
+                "explanation": "Good for general tasks and basic ML."
+            },
+            {
+                "name": "i7_8core",
+                "socket": "LGA1200",
+                "power": "high",
+                "cost": 300,
+                "explanation": "Suitable for moderate to high ML tasks."
+            },
+            {
+                "name": "Ryzen_9",
+                "socket": "AM4",
+                "power": "very_high",
+                "cost": 450,
+                "explanation": "Excellent for intensive ML tasks."
+            }
+        ],
+        "motherboard": [
+            {
+                "name": "Z490",
+                "power": "medium",
+                "supported_sockets": ["LGA1200"],
+                "ram_slots": 4,
+                "cost": 150,
+                "explanation": "Supports high-end processors."
+            },
+            {
+                "name": "B550",
+                "power": "medium",
+                "supported_sockets": ["AM4"],
+                "ram_slots": 4,
+                "cost": 120,
+                "explanation": "Budget-friendly option for AMD processors."
+            }
+        ],
+        "ram": [
+            {
+                "name": "16GB",
+                "power": "medium",
+                "cost": 80,
+                "explanation": "Sufficient for moderate ML tasks."
+            },
+            {
+                "name": "32GB",
+                "power": "high",
+                "cost": 160,
+                "explanation": "Ideal for high-end tasks."
+            }
+        ],
+        "vga": [
+            {
+                "name": "GTX1050",
+                "power": "medium",
+                "cost": 150,
+                "explanation": "Good for general-purpose graphics tasks."
+            },
+            {
+                "name": "GTX1650",
+                "power": "high",
+                "cost": 250,
+                "explanation": "Suitable for moderate ML tasks with good performance."
+            }
+        ],
+        "ssd": [
+            {
+                "name": "256GB SSD",
+                "power": "medium",
+                "cost": 50,
+                "explanation": "Good for general storage needs."
+            },
+            {
+                "name": "512GB SSD",
+                "power": "high",
+                "cost": 100,
+                "explanation": "Suitable for high storage needs."
+            }
+        ],
+        "monitor": [
+            {
+                "name": "1080p Monitor",
+                "power": "medium",
+                "cost": 100,
+                "explanation": "Good for general tasks and basic graphic design."
+            },
+            {
+                "name": "4K Monitor",
+                "power": "high",
+                "cost": 300,
+                "explanation": "Suitable for high-end graphic design and video editing."
+            }
+        ]
+    }
+}

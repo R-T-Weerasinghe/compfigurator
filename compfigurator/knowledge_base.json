@@ -1,0 +1,359 @@
+{
+    "marketVolatility": {
+        "priceUncertainty": {
+            "cpu": 0.05,
+            "gpu": 0.08, 
+            "ram": 0.03,
+            "motherboard": 0.02,
+            "storage": 0.04,
+            "monitor": 0.03
+        }
+    },
+    "taskRequirements": {
+        "scientific": {
+            "budgetAlloc": {
+                "cpu": 0.4,
+                "ram": 0.2,
+                "gpu": 0.15,
+                "ssd": 0.15,
+                "monitor": 0.05,
+                "mb": 0.05
+            },
+            "budgetExplain": "The scientific tasks require a powerful CPU for processing data, a moderate amount of RAM, a decent GPU for visualization"
+        },
+        "machineLearning": {
+            "budgetAlloc": {
+                "cpu": 0.2,
+                "ram": 0.5,
+                "gpu": 0.2,
+                "ssd": 0.05,
+                "monitor": 0.025,
+                "mb": 0.025
+            },
+            "budgetExplain": "Machine learning tasks require a high amount of RAM for training models, a decent GPU for processing data, and a moderate CPU for general processing."
+        },
+        "graphicDesign": {
+            "budgetAlloc": {
+                "cpu": 0.2,
+                "ram": 0.15,
+                "gpu": 0.25,
+                "ssd": 0.1,
+                "monitor": 0.25,
+                "mb": 0.05
+            },
+            "budgetExplain": "Graphic design tasks require a decent CPU for general processing, a moderate amount of RAM for design applications, a good GPU for rendering graphics, and a high-resolution monitor for accurate color representation."
+        },
+        "engineering": {
+            "budgetAlloc": {
+                "cpu": 0.3,
+                "ram": 0.15,
+                "gpu": 0.3,
+                "ssd": 0.1,
+                "monitor": 0.1,
+                "mb": 0.05
+            },
+            "budgetExplain": "Engineering tasks require a powerful CPU for simulations, a moderate amount of RAM for design applications, a good GPU for rendering 3D models, and a high-resolution monitor for detailed design work."
+        },
+        "gaming": {
+            "budgetAlloc": {
+                "cpu": 0.2,
+                "ram": 0.1,
+                "gpu": 0.4,
+                "ssd": 0.1,
+                "monitor": 0.15,
+                "mb": 0.05
+            },
+            "budgetExplain": "Gaming tasks require a decent CPU for general processing, a moderate amount of RAM for game performance, a powerful GPU for rendering graphics, and a high-resolution monitor for immersive gameplay."
+        },
+        "office": {
+            "budgetAlloc": {
+                "cpu": 0.3,
+                "ram": 0.2,
+                "gpu": 0.1,
+                "ssd": 0.2,
+                "monitor": 0.15,
+                "mb": 0.05
+            },
+            "budgetExplain": "Office tasks require a decent CPU for general processing, a moderate amount of RAM for multitasking, a basic GPU for display, and a fast SSD for quick data access."
+        },
+        "softwareDevelopment": {
+            "budgetAlloc": {
+                "cpu": 0.3,
+                "ram": 0.2,
+                "gpu": 0.1,
+                "ssd": 0.2,
+                "monitor": 0.15,
+                "mb": 0.05
+            },
+            "budgetExplain": "Software development tasks require a decent CPU for compiling code, a moderate amount of RAM for running development tools, a basic GPU for display, and a fast SSD for quick data access."
+        },
+        "videoEditingAndAnimation": {
+            "budgetAlloc": {
+                "cpu": 0.25,
+                "ram": 0.2,
+                "gpu": 0.35,
+                "ssd": 0.1,
+                "monitor": 0.1,
+                "mb": 0.05
+            },
+            "budgetExplain": "Video editing and animation tasks require a decent CPU for processing video, a moderate amount of RAM for editing software, a good GPU for rendering graphics, and a high-resolution monitor for accurate color representation."
+        },
+        "contentCreation": {
+            "budgetAlloc": {
+                "cpu": 0.3,
+                "ram": 0.15,
+                "gpu": 0.2,
+                "ssd": 0.2,
+                "monitor": 0.1,
+                "mb": 0.05
+            },
+            "budgetExplain": "Content creation tasks require a decent CPU for processing content, a moderate amount of RAM for editing software, a good GPU for rendering graphics, and a high-resolution monitor for accurate color representation."
+        },
+        "homeTheatre": {
+            "budgetAlloc": {
+                "cpu": 0.25,
+                "ram": 0.15,
+                "gpu": 0.2,
+                "ssd": 0.2,
+                "monitor": 0.15,
+                "mb": 0.05
+            },
+            "budgetExplain": "Home theatre tasks require a decent CPU for media playback, a moderate amount of RAM for multitasking, a good GPU for video output, and a high-resolution monitor for a cinematic experience."
+        },
+        "general": {
+            "budgetAlloc": {
+                "cpu": 0.25,
+                "ram": 0.2,
+                "gpu": 0.2,
+                "ssd": 0.15,
+                "monitor": 0.15,
+                "mb": 0.05
+            },
+            "budgetExplain": "General tasks require a decent CPU for general processing, a moderate amount of RAM for multitasking, a good GPU for display, and a fast SSD for quick data access."
+        }
+    },
+    "components": {
+        "processors": [
+            {
+                "name": "Intel Core i9-14900KS",
+                "socket": "LGA1700",
+                "supportedChipsets": [
+                    "Z790",
+                    "B760"
+                ],
+                "maxMemoryChannels": 2,
+                "maxMemorySpeed": 6000,
+                "integratedGraphics": true,
+                "powerDraw": 150,
+                "price": 1499,
+                "cores": 24,
+                "baseSpeed": 3.8,
+                "boostSpeed": 6.2,
+                "explain": {
+                    "default": "An ultra high-end CPU offering exceptional multi-core and single-core performance for demanding tasks.",
+                    "machineLearning": "Superior processing power for training complex models and parallel computations.",
+                    "scientific": "Exceptional computational capabilities for heavy scientific workloads and complex simulations.",
+                    "graphicDesign": "Outstanding performance for rendering and multitasking in design workflows.",
+                    "engineering": "Excellent for CAD, simulation, and computational engineering tasks."
+                }
+            },
+            {
+                "name": "Intel Core i9-13900K",
+                "socket": "LGA1700",
+                "supportedChipsets": [
+                    "Z790",
+                    "B760"
+                ],
+                "maxMemoryChannels": 2,
+                "maxMemorySpeed": 5600,
+                "integratedGraphics": true,
+                "powerDraw": 125,
+                "price": 699,
+                "cores": 16,
+                "baseSpeed": 3.5,
+                "boostSpeed": 5.5,
+                "explain": {
+                    "default": "A high-end CPU with excellent multi-core and single-core performance.",
+                    "machineLearning": "Ideal for training smaller models and general-purpose tasks due to its high processing power.",
+                    "scientific": "Provides strong computational capabilities for data analysis and simulations."
+                }
+            },
+            {
+                "name": "AMD Ryzen 9 7950X",
+                "socket": "AM5",
+                "supportedChipsets": [
+                    "X670",
+                    "B650"
+                ],
+                "maxMemoryChannels": 2,
+                "maxMemorySpeed": 5200,
+                "integratedGraphics": false,
+                "powerDraw": 170,
+                "price": 649,
+                "cores": 24,
+                "baseSpeed": 3.2,
+                "boostSpeed": 4.8,
+                "explain": {
+                    "default": "A flagship CPU offering top-tier performance for demanding tasks.",
+                    "graphicDesign": "Great for rendering and multitasking in design applications.",
+                    "gaming": "Delivers exceptional gaming performance with high FPS and responsiveness."
+                }
+            }
+        ],
+        "motherboards": [
+            {
+                "name": "ASUS ROG STRIX Z790-E",
+                "socket": "LGA1700",
+                "chipset": "Z790",
+                "formFactor": "ATX",
+                "supportedDDR": "DDR5",
+                "memorySlots": 4,
+                "maxMemorySpeed": 5600,
+                "pciSlots": 3,
+                "m2Slots": 4,
+                "storageInterfaces": ["SATA", "NVMe"],
+                "sataPorts": 6,
+                "price": 399,
+                "explain": {
+                    "default": "A premium motherboard with support for the latest CPUs and high-speed DDR5 memory.",
+                    "gaming": "Excellent PCIe support for high-end GPUs and multiple M.2 slots for fast SSDs.",
+                    "scientific": "Supports high-speed storage and memory for data-intensive tasks."
+                }
+            },
+            {
+                "name": "MSI MPG B650 Tomahawk",
+                "socket": "AM5",
+                "chipset": "B650",
+                "formFactor": "ATX",
+                "supportedDDR": "DDR5",
+                "memorySlots": 4,
+                "maxMemorySpeed": 5200,
+                "pciSlots": 2,
+                "m2Slots": 3,
+                "storageInterfaces": ["SATA", "NVMe"],
+                "sataPorts": 4,
+                "price": 249,
+                "explain": {
+                    "default": "A versatile motherboard offering robust performance at an affordable price.",
+                    "machineLearning": "Supports sufficient RAM and storage for training models efficiently.",
+                    "graphicDesign": "Provides ample connectivity and speed for creative workloads."
+                }
+            }
+        ],
+        "gpus": [
+            {
+                "name": "NVIDIA GeForce RTX 4090",
+                "requiredPcieSlots": 1,
+                "powerDraw": 450,
+                "vram": 24,
+                "clockSpeed": 2.4,
+                "cudaCores": 15360,
+                "rayTracing": true,
+                "price": 1599,
+                "explain": {
+                    "default": "The most powerful GPU on the market, ideal for extreme performance.",
+                    "machineLearning": "Perfect for large-scale model training and inference with high VRAM capacity.",
+                    "gaming": "Delivers unmatched performance for 4K gaming with ray tracing.",
+                    "graphicDesign": "Accelerates rendering and complex visualizations in creative software."
+                }
+            },
+            {
+                "name": "AMD Radeon RX 7900 XT",
+                "requiredPcieSlots": 1,
+                "powerDraw": 300,
+                "vram": 20,
+                "clockSpeed": 2.2,
+                "cudaCores": 10240,
+                "rayTracing": true,
+                "price": 899,
+                "explain": {
+                    "default": "A high-performance GPU for demanding applications.",
+                    "gaming": "Offers excellent 1440p and 4K gaming experiences.",
+                    "videoEditing": "Handles complex video rendering and real-time previews effortlessly."
+                }
+            }
+        ],
+        "ram": [
+            {
+                "name": "Corsair Vengeance DDR5 32GB",
+                "type": "DDR5",
+                "speed": 5200,
+                "capacity": 32,
+                "price": 249,
+                "explain": {
+                    "default": "A high-speed RAM module suitable for modern systems.",
+                    "machineLearning": "Provides ample memory for data-intensive model training.",
+                    "scientific": "Handles large datasets and simulations efficiently."
+                }
+            },
+            {
+                "name": "G.Skill Trident Z5 DDR5 16GB",
+                "type": "DDR5",
+                "speed": 6000,
+                "capacity": 16,
+                "price": 199,
+                "explain": {
+                    "default": "A high-performance RAM module with excellent speed.",
+                    "gaming": "Perfect for smooth gaming performance without bottlenecks.",
+                    "graphicDesign": "Sufficient for multitasking in creative applications."
+                }
+            }
+        ],
+        "storage": [
+            {
+                "name": "Samsung 980 Pro 1TB",
+                "type": "NVMe",
+                "formFactor": "M.2",
+                "interface": "NVMe",
+                "capacity": 1024,
+                "price": 129,
+                "explain": {
+                    "default": "A blazing-fast NVMe SSD for quick boot times and load speeds.",
+                    "machineLearning": "Essential for rapid data access during model training.",
+                    "gaming": "Reduces game load times significantly for a better experience."
+                }
+            },
+            {
+                "name": "Western Digital Blue 1TB",
+                "type": "SATA",
+                "formFactor": "2.5",
+                "interface": "SATA",
+                "capacity": 1024,
+                "price": 99,
+                "explain": {
+                    "default": "A reliable SATA SSD for general storage needs.",
+                    "office": "Perfect for document storage and quick file access.",
+                    "scientific": "Provides sufficient storage for medium-sized datasets."
+                }
+            }
+        ],
+        "monitors": [
+            {
+                "name": "LG UltraGear 27GP950",
+                "resolution": "4K",
+                "refreshRate": 144,
+                "size": 27,
+                "price": 799,
+                "panelType": "IPS",
+                "explain": {
+                    "default": "A high-resolution monitor with smooth refresh rates.",
+                    "gaming": "Perfect for immersive gaming with 4K resolution and high FPS.",
+                    "graphicDesign": "Offers vibrant colors and sharp visuals for creative tasks."
+                }
+            },
+            {
+                "name": "Dell UltraSharp U2723QE",
+                "resolution": "4K",
+                "refreshRate": 60,
+                "size": 27,
+                "price": 659,
+                "panelType": "IPS",
+                "explain": {
+                    "default": "A premium monitor with excellent color accuracy.",
+                    "videoEditing": "Great for editing 4K content with precise color reproduction.",
+                    "office": "Provides a clear and sharp display for multitasking."
+                }
+            }
+        ]
+    }
+}
